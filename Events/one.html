@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #212121;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="mountain" src="https://images.pexels.com/photos/12797726/pexels-photo-12797726.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><img width="200px" id="flowers" src="https://images.pexels.com/photos/4074414/pexels-photo-4074414.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="indoor" src="https://images.pexels.com/photos/21936249/pexels-photo-21936249/free-photo-of-a-train-station-with-a-large-window-and-a-train.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="fruits" src="https://images.pexels.com/photos/5989139/pexels-photo-5989139.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="jump" src="https://images.pexels.com/photos/20066214/pexels-photo-20066214/free-photo-of-danny-aldridge.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById("jump").onclick = function() {
+    //     alert("person is clicked")
+    // }
+
+    // other event methods used previously
+    // attachEvent()
+    // jQuery - on
+
+    // types of event
+    // -----
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // position related ---- clientX, clientY, screenX, screenY
+    // keys related ----- altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("images").addEventListener('click', function(e){
+    //     console.log("clicked inside the ul")
+    // }, false)
+    // true means event capturing
+    // false means event bubbling
+
+    // document.getElementById("jump").addEventListener('click', function(e){
+    //     console.log("person clicked")
+    //     e.stopPropagation()
+    // }, false)
+
+    // Event Propogation
+    //----- event bubbling(bottom to top) , event capturing(top to bottom)
+
+
+    // event preventDefault
+
+    // document.getElementById("google").addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked")
+    // }, false)
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        if(e.target.tagName === "IMG") {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+
+        // another way to remove 
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false)
+
+</script>
+</html>
