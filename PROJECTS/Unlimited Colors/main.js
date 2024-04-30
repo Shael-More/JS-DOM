@@ -1,5 +1,3 @@
-const body = document.querySelector("body")
-
 const colorGen = function() {
     const hex = '0123456789ABCDEF'
     let color = '#'
