@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="note">
+        JavaScript textContent Demo!
+    </div> 
+    <p id="para"></p> -->
+
+    <!-- <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+    </ul> -->
+
+    <div class="container"></div>
+
+</body>
+
+<script>
+    // --------------- createElement Vs innerHTML
+    // performance : createElement > innerHTML 
+    // More Secure : createElement > innerHTML
+
+    let div = document.querySelector('.container')
+    // create element and append
+    let p = document.createElement("p")
+    p.class = "para"
+    p.textContent = "JAVASCRIPT TUTORIALS"
+
+    div.appendChild(p)
+    
+    // directly use innerHTML
+
+    div.innerHTML += `<p class="para">JS DOM</p> `
+    
+    
+    
+    
+    // ---------------- TextContent
+
+    // const note= document.getElementById("note")
+    // console.log(note.textContent)
+    // console.log(note.innerText)
+    // console.log(note.innerHTML)
+
+    // const para = document.getElementById("para")
+    // para.textContent = "This a paragraph"
+
+    // -------------- innerHTML
+
+    // const menu = document.getElementById("menu")
+    
+    // create new li element
+
+    // let li = document.createElement("li")
+    // li.textContent = "About Us"
+    // menu.appendChild(li)
+
+    // console.log(menu.innerHTML)
+
+
+
+
+
+
+
+
+</script>
+</html>
