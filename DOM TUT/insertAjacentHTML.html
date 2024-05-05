@@ -6,18 +6,49 @@
     <title>DOM</title>
 </head>
 <body>
-    <ul id="list">
+    <!-- <ul id="list">
         <li>CSS</li>
-    </ul>
+    </ul> -->
     
+    <ul id="menu">
+        <li>Home</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
 </body>
 
 <script>
-    let list = document.querySelector('#list')
+    // insertAdjacentHTML
+    // let list = document.querySelector('#list')
 
-    list.insertAdjacentHTML("beforebegin", `<h2>Web Technologies</h2>`)
-    list.insertAdjacentHTML("afterbegin", `<li>HTML</li>`)
-    list.insertAdjacentHTML("beforeend", `<li>Javascript</li>`)
-    list.insertAdjacentHTML("afterend", `<p>For frontend deveolpers</p>`)
+    // list.insertAdjacentHTML("beforebegin", `<h2>Web Technologies</h2>`)
+    // list.insertAdjacentHTML("afterbegin", `<li>HTML</li>`)
+    // list.insertAdjacentHTML("beforeend", `<li>Javascript</li>`)
+    // list.insertAdjacentHTML("afterend", `<p>For frontend deveolpers</p>`)
+
+    // replaceChild
+
+    // let li = document.createElement('li')
+    // li.textContent = 'Internet works'
+    // list.replaceChild(li, list.firstElementChild)
+
+    // -----------removeChild
+    // list.removeChild(list.lastElementChild)
+
+    //------------- remove all child
+    // while(list.firstChild) {
+    //     list.removeChild(list.firstChild)
+    // }
+
+    // ------------ cloneNode: to clone an element
+
+    // let cloneNode  = originalNode.cloneNode(deep)
+
+    let menu = document.querySelector('#menu');
+    let clonedMenu = menu.cloneNode(true);
+    clonedMenu.id = 'menu-mobile';
+    document.body.appendChild(clonedMenu);
 </script>
 </html>
