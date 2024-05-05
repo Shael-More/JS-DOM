@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM: DocumentFragment</title>
+</head>
+<body>
+    <!-- compose DOM nodes and update them to the active DOM tree. -->
+
+    <ul id="language"></ul>
+</body>
+<script>
+    
+    // // Another way to create fragments
+    // let fragmentTwo = document.createDocumentFragment()
+    
+    let languages = ['JS', 'TypeScript', 'Elm', 'Dart', 'Scala'];
+    
+    let langEl = document.querySelector('#language')
+    
+    // // create fragment
+    let fragment = new DocumentFragment();
+
+    languages.forEach(function(language) {
+        let li = document.createElement('li')
+        li.innerHTML = language
+        fragment.appendChild(li)
+    })
+    
+    langEl.appendChild(fragment)
+
+
+</script>
+</html>
