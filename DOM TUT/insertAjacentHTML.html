@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+    
+</body>
+
+<script>
+    let list = document.querySelector('#list')
+
+    list.insertAdjacentHTML("beforebegin", `<h2>Web Technologies</h2>`)
+    list.insertAdjacentHTML("afterbegin", `<li>HTML</li>`)
+    list.insertAdjacentHTML("beforeend", `<li>Javascript</li>`)
+    list.insertAdjacentHTML("afterend", `<p>For frontend deveolpers</p>`)
+</script>
+</html>
