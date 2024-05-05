@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM- Before</title>
+</head>
+<body>
+    <ul>
+        <li>Angular</li>
+        <li>Vue</li>
+    </ul>
+
+    <button>Donate Here</button>
+</body>
+
+<script>
+    let list = document.querySelector('ul')
+
+    let libs = ['React', 'Meteor', 'Polymer']
+
+    const items = libs.map(lib => {
+        const item = document.createElement('li')
+        item.innerText = lib       
+        return item
+    })
+
+    list.lastChild.after(...items)
+
+    const button = document.querySelector('button');
+    button.firstChild.after('🧡 ');
+</script>
+</html>
