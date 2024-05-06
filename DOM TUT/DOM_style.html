@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM- Style</title>
+    <style type="text/css">
+        .message {
+            background-color: #fff3d4;
+            border: solid 1px #f6b73c;
+            padding: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>Send</button>
+
+        classes
+    <p class="message" style="color:red">
+        This is a JS getComputedStyle() Demo!
+    </p> -->
+
+    <!-- Classlist -->
+    <!-- <ul id="menu" class="vertical main">
+        <li>Homepage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+     </ul> -->
+
+
+     <!-- offsetwidth and offsetheight -->
+    <div class="box" style="width:100px;height:150px;border:solid 1px #000;padding:10px"></div>
+
+</body>
+
+<script>
+    // let btn = document.querySelector('button')
+
+    // btn.style.backgroundColor = 'red'
+    // btn.style.color = 'white'
+    // btn.style.cssText = 'color:orange;background-color:blue'
+
+    // getComputatedStyle()
+
+    let message = document.querySelector('.message')
+    // let style = getComputedStyle(message)
+
+    // console.log('color: ', style.color)
+    // console.log('background color: ', style.backgroundColor)
+</script>
+
+<script>
+    // ####### className -use to manipulate css classes of an element
+
+    // add new class to element
+    let menu = document.querySelector('#menu')
+    menu.className += ' hero'
+    
+    // another way to add new class 
+    menu.classList.add('honda')
+
+    // remove classes
+    menu.classList.remove('hero')
+
+    // replace classes
+    menu.classList.replace('honda', 'grey')
+
+    // check specified class
+    // console.log(menu.classList.contains('grey'))
+
+    // toggle a class
+
+    menu.classList.toggle('blue')
+
+    // console.log(menu.className);
+
+</script>
+
+<script>
+    // Getting width and height of an element
+    let box = document.querySelector('.box')
+
+    let width = box.offsetWidth;
+    let height = box.offsetHeight;
+
+    // console.log({width, height})
+
+    // getBoundingClientRect()
+    let domRect = box.getBoundingClientRect()
+    // console.log(domRect);
+
+
+    // clientWidth, clientHeight - width and height that include padding but without the border
+
+    let wid = box.clientWidth;
+    let hei = box.clientHeight
+    // console.log(wid);
+    // console.log(hei);
+
+    // To get the margin of an element, you use the getComputedStyle() method:
+
+    let style = getComputedStyle(box)
+
+    let ml = parseInt(style.marginLeft)
+    let mr = parseInt(style.marginRight)
+    let mt = parseInt(style.marginTop)
+    let mb = parseInt(style.marginBottom)
+
+    // console.log({ml,mr, mt, mb});
+</script>
+</html>
