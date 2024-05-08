@@ -7,9 +7,15 @@
 </head>
 <body>
     <button id="myButton">Click Me!</button>
+    <input type="submit" id="myButton" onclick="showAlert()"> 
+    <input type="button" id="myButton" value="save" onclick="alert(event.type)"> 
+    <input type="button" id="myButton" value="save" onclick="alert(this.value)"> 
+    <input type="button" id="myButton" value="save" onclick="alert(value)"> 
+    <input type="button" id="btn" value="BTN">
 </body>
 
 <script>
+    // basic event
     let btn = document.querySelector("#myButton")
 
     function handleClick() {
@@ -17,6 +23,22 @@
     }
     btn.addEventListener("click", handleClick)
 
+
+    // handling event
+    function showAlert() {
+        alert('Submitted')
+    }
+
+
+    let butn = document.getElementById('btn')
+
+    butn.addEventListener('click', function(event) {
+        alert(event.type)
+    })
+
+    butn.addEventListener('click', function() {
+        alert("clicked")
+    })
 
 </script>
 </html>
