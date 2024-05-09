@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Scroll Events</title>
+</head>
+<body>
+    <div id="scrollDemo">
+        <p>JS Scroll Event Demo</p>
+    </div>
+
+    <div id="control">
+        <button id="btnScrollLeft">Scroll Left</button>
+        <button id="btnScrollTop">Scroll Top</button>
+    </div>
+</body>
+
+<script>
+    // window.addEventListener('scroll', () => {
+    //     console.log('scrolling.....');
+    // })
+
+    let control = document.querySelector('#control');
+
+control.addEventListener('click', function (e) {
+    // get the scrollDemo
+    let div = document.getElementById('scrollDemo');
+    // get the target
+    let target = e.target;
+    // handle each button's click
+    switch (target.id) {
+        case 'btnScrollLeft':
+            div.scrollLeft += 20;
+            break;
+
+        case 'btnScrollTop':
+            div.scrollTop += 20;
+            break;
+    }
+});
+</script>
+</html>
