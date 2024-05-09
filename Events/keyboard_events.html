@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Keyboard events</title>
+</head>
+<body>
+    <!-- key/code -->
+    <input type="text" id="message">
+</body>
+
+<script>
+
+    // keydown--> keypress --> keyup sequence 
+    let inp = document.getElementById("message")
+    inp.addEventListener('keydown', (e) => {
+        console.log(e)
+        console.log(`key: ${e.key} code: ${e.keyCode}`)
+        // console.log(e.keyCode)
+    })
+</script>
+</html>
