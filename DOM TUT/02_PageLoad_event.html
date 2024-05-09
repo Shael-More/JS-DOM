@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Page Load Events</title>
+</head>
+<body>
+    <h1>Welcome to JS Page load Events</h1>
+    <a href="https://www.javascripttutorial.net/">JavaScript Tutorial</a>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (e) => {
+        console.log('The DOM is fully loaded.');
+    })
+
+    document.addEventListener('load', (e) => {
+        console.log('The page is fully loaded');
+    })
+
+    document.addEventListener('beforeunload', (e) => {
+        e.preventDefault()
+
+        e.returnValue = ''
+    })
+
+    document.addEventListener('unload', (e) => {
+        // send analytic data
+    })
+</script>
+
+<script>
+    // onload 
+    // window.onload = (e) => {
+    //     console.log("loaded");
+    // }
+
+    // beforeunload
+    window.addEventListener('beforeunload', (event) => {
+            event.preventDefault();
+            // Google Chrome requires returnValue to be set.
+            event.returnValue = '';
+        });
+
+
+</script>
+</html>
