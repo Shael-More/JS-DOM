@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS hashchange event Demo</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+    </ul>
+
+    <div id="content"></div>
+</body>
+<script>
+    function updateContent() {
+        let hash = window.location.hash
+        console.log(hash);
+        let content = document.getElementById('content')
+      
+
+        if (hash === '#section1') {
+            content.innerHTML = '<h2>Section 1 Content</h2><p>This is the content for section 1.</p>';
+        } else if (hash === '#section2') {
+            content.innerHTML = '<h2>Section 2 Content</h2><p>This is the content for section 2.</p>';
+        } else if (hash === '#section3') {
+            content.innerHTML = '<h2>Section 3 Content</h2><p>This is the content for section 3.</p>';
+        } else {
+            content.innerHTML = '<h2>Page Not Found</h2><p>Sorry, the requested page does not exist.</p>';
+        }
+    }
+
+    window.addEventListener('hashchange', updateContent)
+    updateContent()
+
+</script>
+</html>
