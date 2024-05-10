@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS scrollIntoView Demo</title>
+    <style>
+        .btn  {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            font-size: 24px;
+            border: none;
+            outline: none;
+        }
+
+        .special {
+            color: red;
+            background-color: yellow;
+        }
+      
+        ul li {
+            padding: 20px;
+            list-style-type: none;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        ul li:nth-child(2n) {
+            background-color: lightgray;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn">Scroll Into View</button>
+        <ul>
+            <li>C</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>C#</li>
+            <li>Go</li>
+            <li>Visual Basic</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>SQL</li>
+            <li>R</li>
+            <li>Swift</li>
+            <li class="special">JavaScript</li>
+            <li>MATLAB</li>
+            <li>Assembly language</li>
+            <li>Ruby</li>
+            <li>PL/SQL</li>
+            <li>Classic Visual Basic</li>
+            <li>Perl</li>
+            <li>Scratch</li>
+            <li>Objective-C</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector('.btn')
+    let el = document.querySelector('.special')
+
+    btn.addEventListener('click', () => {
+        el.scrollIntoView(false)
+    })
+</script>
+</html>
