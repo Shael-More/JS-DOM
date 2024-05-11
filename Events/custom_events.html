@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Custom Events Demo</title>
+</head>
+<body>
+    <div class="note">JS Custom Event Demo</div>
+</body>
+
+<script>
+    // function highlight(ele, callback) {
+    //     const bgColor = 'yellow'
+    //     ele.style.backgroundColor = bgColor;
+        
+    //     if(callback && typeof callback === 'function') {
+    //         callback(ele)
+    //     }
+    // }
+
+    // let note = document.querySelector('.note')
+
+    // function addBorder(elem) {
+    //     elem.style.border = `1px solid red`
+    // }
+    // highlight(note, addBorder)
+
+
+    // function highlight(ele) {
+    //     const bgColor= 'yellow'
+
+    //     ele.style.backgroundColor = bgColor
+
+    //     // to make code more flexible, you can use custom event
+    //     let event = new CustomEvent('highlight', {
+    //         detail: {backgroundColor: 'yellow'}
+    //     })
+        
+    //     // Dispatching custom events
+    //     ele.dispatchEvent(event);
+    // }
+
+    // let div = document.querySelector('.note')
+
+    // function addBorder(elem) {
+    //         elem.style.border = "solid 1px red";
+    //     }
+
+    // div.addEventListener('highlight', (e) => {
+    //     addBorder(this)
+
+    //     console.log(e.detail);
+    // })
+
+    // highlight(div)
+</script>
+<script>
+    function highlight(elem) {
+            const bgColor = 'yellow';
+            elem.style.backgroundColor = bgColor;
+
+            // create the event
+            let event = new CustomEvent('highlight', {
+                detail: {
+                    backgroundColor: bgColor
+                }
+            });
+            // dispatch the event
+            elem.dispatchEvent(event);
+        }
+
+        // Select the div element
+        let div = document.querySelector('.note');
+
+        // Add border style
+        function addBorder(elem) {
+            elem.style.border = "solid 1px red";
+        }
+
+        // Listen to the highlight event
+        div.addEventListener('highlight', function (e) {
+            addBorder(this);
+
+            // examine the background
+            console.log(e.detail);
+        });
+
+        // highlight div element
+        highlight(div);
+</script>
+</html>
