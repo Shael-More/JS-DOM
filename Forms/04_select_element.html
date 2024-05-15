@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Select Element Demo</title>
+</head>
+<body>
+    <form>
+        <label for="framework">Select a JS Framework</label>
+        <select name="" id="framework" >
+            <option value="">Angular</option>
+            <option value="1">React</option>
+            <option value="2">Vue.js</option>
+            <option>Ember.js</option>
+        </select>
+
+        <button id="btn">Get the selected index</button>
+    </form>
+</body>
+
+<script>
+    const btn = document.querySelector('#btn')
+    const sb =document.querySelector('#framework')
+
+    btn.addEventListener('click', (e) => {
+        event.preventDefault()
+        // alert(sb.selectedIndex)
+        alert(sb.value)
+    })
+
+    console.log(sb.options[1].text);
+    console.log(sb.options[1].value);
+    console.log(sb.options[sb.selectedIndex]);
+</script>
+</html>
