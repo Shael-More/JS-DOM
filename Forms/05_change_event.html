@@ -14,9 +14,15 @@
 <script>
     // for input element change
     let input = document.querySelector('.input');
-        let result = document.querySelector('#result');
-        input.addEventListener('change', function () {
-            result.textContent = this.value;
-        });
+    let result = document.querySelector('#result');
+    input.addEventListener('change', function () {
+        result.textContent = this.value;
+    });
+
+
+    // input event
+    // input.addEventListener('input', function () {
+    //     result.textContent = this.value;
+    // });
 </script>
 </html>
